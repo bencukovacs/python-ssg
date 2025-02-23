@@ -1,5 +1,5 @@
 import unittest
-import Models.htmlnode as htmlnode
+import htmlnode as htmlnode
 
 
 class TestHtmlNode(unittest.TestCase):
