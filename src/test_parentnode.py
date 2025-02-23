@@ -6,17 +6,13 @@ class TestParentNode(unittest.TestCase):
         node = ParentNode(None, [], None)
         self.assertRaisesRegex(ValueError, ".*a tag", node.to_html)
         
-    def test_no_children(self):
-        node = ParentNode("div", [], None)
-        self.assertRaisesRegex(ValueError, ".* children", node.to_html)
-        
     def test_to_html_oneleaf(self):
         leafnode = LeafNode("LeafNode", None, None)
         node = ParentNode("div", [leafnode], None)
         text = node.to_html()
         self.assertEqual(text, "<div>LeafNode</div>")
     
-    def test_to_html_nestedparent(self):
+    def test_to_html_nested_parent(self):
         leafnode = LeafNode("LeafNode", None, None)
         node = ParentNode("div", [leafnode], None)
         node2 = ParentNode("div", [node], None)

@@ -9,12 +9,12 @@ class TestTextNode(unittest.TestCase):
             self.assertEqual(node, node2)
             
         def test_urlisnone(self):
-            node = TextNode("URL is None", TextType.NORMAL)
+            node = TextNode("URL is None", TextType.TEXT)
             self.assertIsNone(node.url)
             
         def test_noteq(self):
             node = TextNode("This is a text node", TextType.BOLD)
-            node2 = TextNode("This is a text node", TextType.NORMAL)
+            node2 = TextNode("This is a text node", TextType.TEXT)
             self.assertNotEqual(node, node2)
             
         def test_repr(self):
